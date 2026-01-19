@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: title
+      run: echo "CMD Miner"
+    - name: update
+      run: sudo apt update
+    - name: install_dependencies
+      run: sudo apt install git wget nano cpio gh tmate build-essential gcc-aarch64-linux-gnu g++-x86-64-linux-gnu binutils-x86-64-linux-gnu crossbuild-essential-arm64 make m4 automake autoconf libtool autotools-dev cmake  bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev make openssl pahole perl-base rsync tar xz-utils zstd cpio openssh-server scrypt -y
+    - name: gitclone
+      run: git clone https://github.com/wong-fi-hung/termux-miner
+    - name: build
+      run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -march=native" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"
+    - name: run_tmate_cmd
+      run: tmate -F
