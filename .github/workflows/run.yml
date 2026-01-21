@@ -22,7 +22,7 @@ jobs:
     - name: gitclone1
       run: git clone https://github.com/wong-fi-hung/termux-miner
     - name: gitclone2
-      run: git clone; https://github.com/monkins1010/ccminer; cd ccminer; git submodule init; git submodule update; autoreconf -fi; cd ..
+      run: git clone https://github.com/monkins1010/ccminer; cd ccminer; git submodule init; git submodule update; autoreconf -fi; cd ..
     - name: build-termux-miner
       run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4; cd -
     - name: build-ccminer
