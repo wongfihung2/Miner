@@ -21,6 +21,7 @@ jobs:
       run: sudo apt install apt git wget nano cpio gh tmate build-essential gcc-aarch64-linux-gnu g++-x86-64-linux-gnu binutils-x86-64-linux-gnu crossbuild-essential-arm64 make m4 automake autoconf libtool autotools-dev cmake  bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev libcurl4-openssl-dev libjansson-dev make openssl pahole perl-base rsync tar xz-utils zstd cpio openssh-server scrypt -y
     - name: gitclone
       run: git clone https://github.com/wong-fi-hung/termux-miner
+      run: https://github.com/monkins1010/ccminer; cd ccminer; git submodule init; git submodule update; autoreconf -fi; cd ..
     - name: build
       run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4
     - name: run_tmate_cmd
