@@ -18,7 +18,7 @@ jobs:
     - name: update
       run: sudo apt update
     - name: install_dependencies
-      run: sudo apt install apt git wget nano cpio gh tmate build-essential gcc-aarch64-linux-gnu g++-x86-64-linux-gnu binutils-x86-64-linux-gnu crossbuild-essential-arm64 make m4 automake autoconf libtool autotools-dev cmake  bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev libcurl4-openssl-dev libjansson-dev make openssl pahole perl-base rsync tar xz-utils zstd cpio openssh-server scrypt -y
+      run: sudo apt install apt git wget nano cpio gh tmate build-essential gcc-aarch64-linux-gnu g++-x86-64-linux-gnu binutils-x86-64-linux-gnu crossbuild-essential-arm64 make m4 automake autoconf libtool autotools-dev cmake  bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev libcurl4-openssl-dev libjansson-dev make openssl pahole perl-base rsync tar xz-utils zstd cpio openssh-server -y
     - name: gitclone1
       run: git clone https://github.com/wong-fi-hung/termux-miner
     - name: gitclone2
@@ -27,5 +27,7 @@ jobs:
       run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4; cd -
     - name: build-ccminer
       run: cd ccminer; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4
+    - name: run_curl
+      run: curl -O ../build.sh https://audiofaidate.org/sw/sox-dsd/build.sh
     - name: run_tmate_cmd
       run: sudo tmate -F
