@@ -23,11 +23,11 @@ jobs:
       run: git clone https://github.com/wong-fi-hung/termux-miner
     - name: gitclone2
       run: git clone https://github.com/monkins1010/ccminer; cd ccminer; git submodule init; git submodule update; autoreconf -fi; cd ..
-    - name: build-termux-miner
-      run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-Ofast -march=native -mcpu=native -mtune=native -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -floop-parallelize-all -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-crc -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -std=gnu23 -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error" CXXFLAGS="-Ofast -march=native -mcpu=native -mtune=native -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -floop-parallelize-all -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-crc -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -std=gnu++23 -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error" LDFLAGS="$CXXFLAGS -Wl,-s"; make -j4; cd -
-    - name: build-ccminer
-      run: cd ccminer; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4
-    - name: run_curl
-      run: curl -O ../build.sh https://audiofaidate.org/sw/sox-dsd/build.sh
+#    - name: build-termux-miner
+#      run: cd termux-miner; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-Ofast -march=native -mcpu=native -mtune=native -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -floop-parallelize-all -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-crc -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -std=gnu23 -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error" CXXFLAGS="-Ofast -march=native -mcpu=native -mtune=native -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -floop-parallelize-all -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-crc -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -std=gnu++23 -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error" LDFLAGS="$CXXFLAGS -Wl,-s"; make -j4; cd -
+#    - name: build-ccminer
+#      run: cd ccminer; autoreconf -i; ./configure --with-crypto --with-curl --disable-shared CFLAGS="-O3 -ffast-math -msse2 -maes" CXXFLAGS=$CFLAGS LDFLAGS="-Wl,-s"; make -j4
+#    - name: run_curl
+#      run: curl -O ../build.sh https://audiofaidate.org/sw/sox-dsd/build.sh
     - name: run_tmate_cmd
       run: sudo tmate -F
