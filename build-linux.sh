@@ -2,7 +2,7 @@
 
 # Default for cortex-a53 optimized builds
 clear
-# -fprofile-reproducible=[serial|parallel-runs|multithreaded]
+
 export feature="native"
 export CC=gcc
 export CXX=g++
