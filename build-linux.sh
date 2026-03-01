@@ -6,7 +6,7 @@ clear
 export feature="native"
 export CC=gcc
 export CXX=g++
-export CFS="-Ofast -march=$feature -mcpu=$feature -mtune=$feature -flto -pg -maes -mavx2 -msse2 -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -freorder-functions -finline-functions -finline-stringops=memcmp -finline-stringops=memcpy -finline-stringops=memmove -finline-stringops=memset -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error"
+export CFS="-Ofast -march=$feature -mcpu=$feature -mtune=$feature -flto -maes -mavx2 -msse2 -fvisibility=hidden -funroll-loops -fomit-frame-pointer -fassociative-math -funsafe-math-optimizations -funsafe-loop-optimizations -faggressive-loop-optimizations -ftree-parallelize-loops=4 -ftree-loop-optimize -floop-nest-optimize -foptimize-sibling-calls -foptimize-strlen -fexpensive-optimizations -freorder-functions -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error"
 export CFLAGS="$CFS -std=gnu99"
 export CXXFLAGS="$CFS -std=gnu++23"
 export LIBS="-lcurl -lcrypto -lssl"
