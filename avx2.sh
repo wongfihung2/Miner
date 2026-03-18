@@ -6,8 +6,8 @@ clear
 export feature="native"
 export CC=gcc
 export CXX=g++
-export CFS="-O3 -Ofast -march=$feature -mcpu=$feature -mtune=$feature -maes -mavx2 -D__AVX2__ -DUSE_ASM -pg -fvisibility=hidden -funroll-loops -fomit-frame-pointer -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error -std=gnu99"
-export CXS="-O3 -Ofast -march=$feature -mcpu=$feature -mtune=$feature -maes -mavx2 -D__AVX2__ -DUSE_ASM -pg -fvisibility=hidden -funroll-loops -fomit-frame-pointer -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error -std=gnu++17"
+export CFS="-O3 -Ofast -march=$feature -mcpu=$feature -mtune=$feature -maes -mavx2 -D__AVX2__ -DUSE_ASM -DUSE_MONITORING -fvisibility=hidden -funroll-loops -fomit-frame-pointer -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error -std=gnu99"
+export CXS="-O3 -Ofast -march=$feature -mcpu=$feature -mtune=$feature -maes -mavx2 -D__AVX2__ -DUSE_ASM -DUSE_MONITORING -fvisibility=hidden -funroll-loops -fomit-frame-pointer -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error -std=gnu++17"
 export CFLAGS="$CFS"
 export CXXFLAGS="$CXS"
 export LIBS="-lcurl -lcrypto -lssl"
