@@ -1,7 +1,7 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 
 clear
-../new-miner/cpuminer-2 \
+./cpuminer \
 	-a yescryptR16 \
 	-o stratum+tcp://singapore.mining-dutch.nl:9983 \
 	-u maribun20.worker2 \
