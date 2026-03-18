@@ -1,0 +1,11 @@
+#!/bin/bash
+
+clear
+./cpuminer \
+	-a xelisv2 \
+        -o stratum+tcp://xelisv2-pepew.eu.mine.zpool.ca:4833 \
+        -u 12Q7K54ebsbMQyHMaYzn9jVdBSDudm6Ew8 \
+        -p "c=BTC,d=0.066" \
+        -t 4 \
+        --cpu-priority 2 \
+        --cpu-affinity 0xf

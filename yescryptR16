@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+clear
+../new-miner/cpuminer-2 \
+	-a yescryptR16 \
+	-o stratum+tcp://singapore.mining-dutch.nl:9983 \
+	-u maribun20.worker2 \
+	-p "d=0.006" \
+	-t 4 \
+	--cpu-priority 0 \
+	--cpu-affinity 0xf

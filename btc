@@ -1,0 +1,11 @@
+#!/bin/bash
+
+clear
+../new-miner/cpuminer-2 \
+	-a sha256d \
+        -o stratum+tcp://mine.zpool.ca:3333 \
+        -u 12Q7K54ebsbMQyHMaYzn9jVdBSDudm6Ew8 \
+        -p "c=BTC,zap=DGB-sha,d=0.01" \
+	-t 4 \
+	--cpu-priority 0 \
+	--cpu-affinity 0xf
