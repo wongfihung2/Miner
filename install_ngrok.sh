@@ -10,4 +10,7 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 ngrok config add-authtoken 1k5vl3Ui3IfaWKZrdJe7TME4Phr_6docL49ZMndQKBapKUXJi
 service ssh start
 nohup ngrok tcp 22 &
+echo "[01;33mWait ngrok to properly run in 5 secound.[0m"
+sleep 5
 curl http://127.0.0.1:4040/api/tunnels
+echo "[01;32mDone...[0m"

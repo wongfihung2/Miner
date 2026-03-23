@@ -3,7 +3,7 @@
 # Default for cortex-a53 optimized builds
 clear
 
-export feature="native"
+export feature="icelaake-server"
 export CC=gcc
 export CXX=g++
 export CFS="-O3 -Ofast -march=$feature -mcpu=$feature -mtune=$feature -maes -mavx2 -D__AVX2__ -DUSE_ASM -DUSE_MONITORING -fvisibility=hidden -funroll-loops -fomit-frame-pointer -finline-functions -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-error -std=gnu99"
